@@ -17,6 +17,8 @@
     "egg-bin": "^5",
     "egg-ci": "^2",
     "egg-mock": "^5",
+    "crypto":"^1.0.1",
+    "sha1":"^1.1.1",
     "eslint": "^8",
     "eslint-config-egg": "^12"
   },

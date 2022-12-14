@@ -9,6 +9,8 @@ const BaseResponseEnum = {
   // 数据
   PARAMS_VALID_ERROR: [ '20001', '参数有误，请检查！' ],
   DATA_NOT_EXIST: [ '20002', '数据不存在！' ],
+  // 微信
+  UNREGISTERED_ERROR: [ '30001', '微信用户未注册！' ],
 };
 
 module.exports = BaseResponseEnum;
