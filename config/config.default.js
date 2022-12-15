@@ -37,13 +37,20 @@ module.exports = appInfo => {
   // jwt配置信息
   const jwt = {
     // secret: '',  秘钥
-    enable: true, // 默认是关闭，如果开启，这会对所有请求进行自动校验；限定请求，请设置match做路径匹配
+    enable: false, // 默认是关闭，如果开启，这会对所有请求进行自动校验；限定请求，请设置match做路径匹配
     match: /^\/api/, // 匹配的请求，会走jwt校验，否则忽略；例如登录接口需要被忽略
     sign: {
       expiresIn: 1000,
     },
   };
   config.jwt = jwt;
+
+  // 关闭egg自带的安全校验
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+  };
 
   // 自定义项目配置信息
   const userConfig = {

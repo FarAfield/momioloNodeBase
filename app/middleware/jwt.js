@@ -1,6 +1,5 @@
 
 const BaseResponse = require('../core/base_response');
-const BaseSystemConstant = require('../core/base_system_constant');
 const BaseSystemEnum = require('../core/base_response_enum');
 module.exports = () => {
   return async function jwt(ctx, next) {
@@ -8,7 +7,7 @@ module.exports = () => {
     if (token) {
       try {
         // 解码token
-        const decode = ctx.app.jwt.verify(token, BaseSystemConstant.TOKEN_SECRET);
+        const decode = ctx.helper.decodeToken(token);
         await next();
         console.log(decode);
       } catch (error) {
